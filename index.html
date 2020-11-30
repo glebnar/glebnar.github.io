@@ -48,8 +48,40 @@
           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
               integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
               crossorigin="anonymous"></script>
-              <script src="turn.js"></script>
-              <script src="script.js"></script>
+
+              <script>
+                $("#div2").click(function(){
+                    if($(this).css("z-index")==0){
+                      $(this).animate({"top":"-="+($("#div2").height()+55)},300,"swing",function(){
+                              $("#div2").css("opacity",1)
+                              .css("z-index",1);
+                              $("#div1").css("z-index",0)
+                              .fadeTo("fast",0.5);    
+                          })
+                      .animate({"top":"+="+($("#div2").height()+55)},300,"swing")
+                      .animate({"top":"-=15px"},"fast","swing")
+                      .animate({"top":"+=15px"},"fast","swing");
+                    }
+                })
+                $("#div1").click(function(){
+                  if($(this).css("z-index")==0){
+                    $(this).animate({"top":"-="+($("#div1").height()-45)},300,"swing",function(){
+                            $("#div1").css("opacity",1)
+                            .css("z-index",1);
+                            $("#div2").css("z-index",0)
+                            .fadeTo("fast",0.5);    
+                        })
+                    .animate({"top":"+="+($("#div1").height()-45)},300,"swing")
+                    .animate({"top":"-=15px"},"fast","swing")
+                    .animate({"top":"+=15px"},"fast","swing");
+                  }
+              })
+              $(".flip-card-inner").on("click",function() {
+                // $(".flip-card-inner").css( "transform", "rotateY(-180deg)" );
+                   $(this).toggleClass('flipped');
+                   console.log('test');
+              });
+              </script>
 
 </body>
 </html>
