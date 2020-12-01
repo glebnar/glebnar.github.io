@@ -6,7 +6,9 @@ body{
   background-size: contain;
   min-height: 800px;
 }
-
+#elements{
+  position: absolute;
+}
     /* flip card effect */
 
      /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
@@ -95,11 +97,12 @@ body{
 }
 
 .sheet {
-  width: 100%;
+  width: auto;
   height: 100%;
   transform:perspective(700px) rotateX(60deg)  scale(0.3);
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  position: relative;
 }
 
 .sheet:hover{
@@ -123,4 +126,9 @@ width: auto;
 #smartphone img{
   width: 100px;
   height: auto;
+}
+#carteAntre{
+  position: absolute;
+  left: 50%;
+  top: 50%;
 }
